@@ -36,6 +36,7 @@ const router = (request, response) => {
         })
 
     } else if (endPoint === '/suggestions') {
+
         const filePathJobs = path.join(__dirname, "jobs.json");
 
         fs.readFile(filePathJobs, (error, data) => {
@@ -46,7 +47,7 @@ const router = (request, response) => {
             } else {
                 const allJobsData = JSON.parse(data);
 
-                const searchInput = "system";
+                const searchInput = `${request.headers.inputvalue}`;
         
                 const arrayOfSuggestions = allJobsData.filter(item => {
                     // This way we add regex with variables. 

@@ -1,6 +1,8 @@
 
 const fetch = (url, cb)=>{
-    const xhr = new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
+    let searchParam = searchInput.value; 
+
     xhr.onreadystatechange = () => {
         if(xhr.readyState === 4){
             if(xhr.status === 200){
@@ -9,6 +11,8 @@ const fetch = (url, cb)=>{
             }
         }
     }
+
     xhr.open('GET', url, true)
+    xhr.setRequestHeader("inputValue", `${searchParam}`)
     xhr.send()
 }
