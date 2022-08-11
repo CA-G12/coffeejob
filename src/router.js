@@ -26,7 +26,7 @@ const router = (request, response) => {
             }
         })
 
-    } else if (endPoint.includes('public')) {
+    } else if (endPoint.includes('public') || endPoint.includes('autocomplete.js')) {
 
         const filePath = path.join(__dirname, "..", endPoint);
 
