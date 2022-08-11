@@ -1,6 +1,6 @@
-const xhr = new XMLHttpRequest()
 
 const fetch = (url, cb)=>{
+    const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = () => {
         if(xhr.readyState === 4){
             if(xhr.status === 200){
@@ -9,6 +9,6 @@ const fetch = (url, cb)=>{
             }
         }
     }
-    xhr.open('GEt',url, true)
+    xhr.open('GET', url, true)
     xhr.send()
 }
