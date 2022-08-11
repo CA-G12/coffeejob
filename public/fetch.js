@@ -12,7 +12,6 @@ const fetch = (url, cb)=>{
         }
     }
 
-    xhr.open('GET', url, true)
-    xhr.setRequestHeader("inputValue", `${searchParam}`)
-    xhr.send()
+    xhr.open('POST', url, true)
+    xhr.send(`inputValue=${searchParam}`)
 }
