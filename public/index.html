@@ -13,7 +13,25 @@
 <body>
 
     <!-- Header Section -->
-    <header>
+    <header class="header" id="header">
+        <nav class="navbar">
+            <h2 class="logo">CoffeeJob</h2>
+            <div class="navbar-menu">
+                <a href="#">Home</a>
+                <a href="#">Companies</a>
+                <a href="#">Testimonial</a>
+                <a href="#">Sign In</a>
+            </div>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <section class="home-page">
+            <h1 class="header-title">Find Your <br> <span>Suits Job</span> <br> Easily</h1>
+        </section>
 
     </header>
 
@@ -22,10 +40,19 @@
 
     <!-- Results Section -->
     <section class="results-section" id="results-section">
-        <div >
+        <div class="search-wrapper">
+            <div class="search-box">
+                <div class="search-card">
+                    <input class="search-input" id="search-job" type="text" name="job-title" placeholder="Job Title">
+                    <input class="search-input" id="search-job" type="text" name="job-title" placeholder="Location">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div >
             <input type="text" name="search" id="search">
             <button id="search-btn">search</button>
-        </div>
+        </div> -->
     </section>
 
     </main>
