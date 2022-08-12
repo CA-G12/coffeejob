@@ -47,18 +47,28 @@ const router = (request, response) => {
             } else {
                 const allJobsData = JSON.parse(data);
 
-                const searchInput = `${request.headers.inputvalue}`;
-        
-                const arrayOfSuggestions = allJobsData.filter(item => {
-                    // This way we add regex with variables. 
-                    const regex = new RegExp(`${searchInput}`, "gi");
-                    return item.match(regex)
-                }).sort().reverse();
+                allData = ''; 
 
-                const uniqueArrayofSuggestions = Array.from(new Set(arrayOfSuggestions));
-                
-                response.write(JSON.stringify(uniqueArrayofSuggestions))
-                response.end();
+                request.on('data', (chunks) => {
+                    allData += chunks; 
+                })
+
+                request.on('end', () => {
+                    const searchParams = new URLSearchParams(allData); 
+                    const searchInput = searchParams.get("inputValue");
+                    console.log(searchParams);
+
+                    const arrayOfSuggestions = allJobsData.filter(item => {
+                        // This way we add regex with variables. 
+                        const regex = new RegExp(`${searchInput}`, "gi");
+                        return item.match(regex)
+                    }).sort().reverse();
+
+                    const uniqueArrayofSuggestions = Array.from(new Set(arrayOfSuggestions));
+                    
+                    response.write(JSON.stringify(uniqueArrayofSuggestions))
+                    response.end();
+                })        
             }
         })
 
