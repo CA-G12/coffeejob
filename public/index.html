@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../public/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>Coffeejob | Home</title>
+    <title>CoffeeJob | Home</title>
 </head>
 <body>
     <!-- ********************* loading page ********************* -->
@@ -47,15 +47,16 @@
         <div class="search-wrapper">
             <div class="search-box">
                 <div class="search-card">
-                    <input class="search-input" id="search-job" type="text" name="job-title" placeholder="Job Title">
+                    <input type="text" name="search" id="search">
+                    <input class="search-input" id="search" type="text" name="job-title" placeholder="Job Title">
                     <button class="search-btn">Search</button>
                 </div>
             </div>
         </div>
-        <!-- <div >
-            <input type="text" name="search" id="search">
-            <button id="search-btn">search</button>
-        </div> -->
+
+        <div id="suggestions-section">
+
+        </div>
     </section>
 
     </main>
@@ -118,6 +119,8 @@
 
     <!-- ********************* JS Links ********************* -->
     <script src="../public/main.js"></script>
+    <script src="../public/fetch.js"></script>
+    <script src="../public/DOM.js"></script>
 
 </body>
 </html>

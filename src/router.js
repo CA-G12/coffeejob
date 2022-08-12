@@ -1,13 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const mime = require('mime-types')
-// ! mime.lookup('json') // 'application/json'
-// ! mime.lookup('.md') // 'text/markdown'
-// ! mime.lookup('file.html') // 'text/html'
-// ! mime.lookup('folder/file.js') // 'application/javascript'
-// ! mime.lookup('folder/.htaccess') // false
-
-// ! mime.lookup('cats') // false
+const mime = require('mime-types');
 
 const router = (request, response) => {
     const endPoint = request.url;
@@ -26,7 +19,7 @@ const router = (request, response) => {
             }
         })
 
-    } else if (endPoint.includes('public') || endPoint.includes('autocomplete.js')) {
+    } else if (endPoint.includes('public')) {
 
         const filePath = path.join(__dirname, "..", endPoint);
 
@@ -39,6 +32,43 @@ const router = (request, response) => {
                 response.writeHead(200, {"Content-Type": mime.lookup(endPoint)})
                 response.write(data);
                 response.end();
+            }
+        })
+
+    } else if (endPoint === '/suggestions') {
+
+        const filePathJobs = path.join(__dirname, "jobs.json");
+
+        fs.readFile(filePathJobs, (error, data) => {
+            if (error) {
+                response.writeHead(500, {'Content-Type' : mime.lookup('file.html')})
+                response.write('Internal Server Error' + response.statusCode) 
+                response.end()
+            } else {
+                const allJobsData = JSON.parse(data);
+
+                allData = ''; 
+
+                request.on('data', (chunks) => {
+                    allData += chunks; 
+                })
+
+                request.on('end', () => {
+                    const searchParams = new URLSearchParams(allData); 
+                    const searchInput = searchParams.get("inputValue");
+                    console.log(searchParams);
+
+                    const arrayOfSuggestions = allJobsData.filter(item => {
+                        // This way we add regex with variables. 
+                        const regex = new RegExp(`${searchInput}`, "gi");
+                        return item.match(regex)
+                    }).sort().reverse();
+
+                    const uniqueArrayofSuggestions = Array.from(new Set(arrayOfSuggestions));
+                    
+                    response.write(JSON.stringify(uniqueArrayofSuggestions))
+                    response.end();
+                })        
             }
         })
 
