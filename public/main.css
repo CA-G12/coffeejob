@@ -15,6 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +34,19 @@ h1 {
 }
 
 /* ? ********************* loading page ********************* */
+.preloader2{
+    width: 100%;
+    height: 100%;
+    background: var(--white-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all .5;
+}
 .preloader{
     width: 100%;
     height: 100vh;
@@ -290,4 +304,251 @@ h1 {
 /* ? ********************* start media ********************* */
 @media (max-width: 768px) {
     
+}
+
+/* ? ********************* API SECTION ********************* */
+
+.results {
+    min-height: 30vh;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.jobs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.jobs-list {
+    width: 43%;
+    height: 100vh;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.job {
+    width: 100%;
+    height: 300px;
+    background-color: #F4F4F5;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(173, 170, 170);
+    padding: 16px;
+    cursor: pointer;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.companyimg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    margin-right: 15px;
+}
+
+.company-img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.job-title {
+    font-weight: 600;
+}
+
+.company-name {
+    color: #6e46ae;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.company-location {
+    color: #757575;
+    font-size: 15px;
+
+}
+
+.description-container {
+    margin-top: 20px;
+}
+
+.job-description {
+    font-size: 14px;
+    color: rgb(87, 82, 82);
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.job-dates-apply {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 13.5px;
+}
+
+.job-date {
+    color: rgb(87, 82, 82);
+}
+
+.btn {
+    all: unset;
+    cursor: pointer;
+    background-color: #6e46ae;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #fff;
+    padding: 5px 10px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    background-color: #6333af;
+}
+
+.btn:active {
+    transform: translateY(1px);
+    background-color: rgb(108, 63, 180);
+}
+
+.job-apply {
+    margin-right: 15px;
+}
+
+/* Job View Section */
+
+.job-view {
+    width: 57%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+
+}
+
+.view-details-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.view-companyimg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+    margin-right: 20px;
+}
+
+.view-company-img {
+    width: 100%;
+    min-width: 70px;
+    object-fit: contain;
+
+}
+
+.view-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-job-title {
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.view-company-name {
+    color: #6e46ae;
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+
+.view-company-location {
+    color: #757575;
+    font-size: 19px;
+
+}
+
+.view-apply {
+    align-self: flex-end;
+    margin-left: 23%;
+    margin-bottom: 2.5%;
+    white-space: nowrap;
+
+}
+
+.view-additional-details {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+.job-type {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.detail-line {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.details-title {
+    margin-bottom: 10px;
+}
+
+.job-view-elements {
+    display: none;
+}
+
+.jobs-container {
+    display: none;
+}
+
+.animation {
+    animation: appearing-animation .8s ease-in-out;
+}
+
+.slow-animation {
+    animation: slow-appearing-animation .6s ease-in-out;
+}
+
+/* Animations */
+
+@keyframes appearing-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slow-appearing-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
