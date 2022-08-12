@@ -1,7 +1,15 @@
-/* ********************* Font Family ********************* */
+/* ? ********************* Font Family ********************* */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-/* ********************* Base ********************* */
+/* ? ********************* Base ********************* */
+:root {
+    --primary-color: #0076de;
+    --white-color: #fff;
+    --black-color: #333;
+    --gray-color: #f6f8fa;
+    --label-color: #64b1f5;
+    --yellow-color: #ffd723
+}
 
 *, *::after, *::before {
     margin: 0;
@@ -11,10 +19,275 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    width: 100vw;
+    min-height: auto;
+    width: 100%;
+    
 }
 
 input, button, a, textarea {
     font-family: inherit;
+}
+
+h1 {
+    line-height: 1.5;
+}
+
+/* ? ********************* loading page ********************* */
+.preloader{
+    width: 100%;
+    height: 100vh;
+    background: var(--white-color);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5;
+}
+.dot {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 2px;
+}
+.dot1{
+	background-color: var(--primary-color);
+	animation: jump-up 0.6s 0.1s linear infinite;
+}
+.dot2{
+	background-color: var(--yellow-color);
+	animation: jump-up 0.6s 0.2s linear infinite;
+}
+.dot3{
+	background-color: var(--black-color);
+	animation: jump-up 0.6s 0.3s linear infinite;
+}
+
+@keyframes jump-up{
+	50%{
+		transform: translate(0,15px);
+	}
+}
+
+/* ? ********************* start header section ********************* */
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/home.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+.navbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2.5rem;
+    z-index: 10;
+    color: var(--white-color);
+    background: transparent;
+}
+
+.scroll-header {
+    background: var(--black-color);
+}
+
+.navbar .logo {
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.navbar-menu {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-menu a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle .bar {
+    width: 15px;
+    height: 2px;
+    margin: 3px auto;
+    transition: all .3s ease-in-out;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.header .header-title {
+    position: absolute;
+    top: 10rem;
+    left: 2.5rem;
+    letter-spacing: 3px;
+    font-size: 56px;
+    font-weight: bolder;
+    color: var(--white-color);
+    text-shadow: 4px 2px 0px rgb(0 0 0 / 20%);
+}
+.header-title span {
+    color: var(--primary-color);
+}
+
+/* ? ********************* start main section ********************* */
+/* start input search */
+.search-wrapper {
+    width: 60%;
+    margin: auto;
+    min-width: 300px;
+    height: 3.5rem;
+    position: relative;
+}
+.search-box {
+    width: 100%;
+    background-color: var(--gray-color);
+    box-shadow: rgba(2, 11, 20, .2) 0px 5px 15px;
+    position: absolute;
+    top: -45%;
+    height: 100%;
+    width: 100%;
+}
+
+.search-card {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: .5rem;
+}
+
+.search-input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: .5rem;
+}
+
+.search-btn {
+    width: 200px;
+    background: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+/* ? ********************* start footer section ********************* */
+.footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-content h3,
+.footer-content h4 {
+    line-height: 3;
+    color: var(--yellow-color);
+}
+
+.footer-content p {
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: var(--gray-color);
+    line-height: 2;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.social-media {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.social-media a {
+    text-decoration: none;
+    margin-right: 10px;
+    background: var(--gray-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-size: 19px;
+}
+.social-media a i {
+    color: var(--primary-color);
+}
+
+.copy-right {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: var(--gray-color);
+    color: var(--primary-color);
+}
+
+/* ? ********************* start scroll up ********************* */
+.scroll-up{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: var(--yellow-color);
+    opacity: .8;
+    border-radius: 0.4rem;
+    z-index: 10;
+    transition: all .4s;
+    text-decoration: none;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.scroll-up-icon{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* show scroll */
+.show-scroll{
+    bottom: 5rem;
+}
+
+/* ? ********************* start media ********************* */
+@media (max-width: 768px) {
+    
 }

@@ -8,12 +8,34 @@
     <link rel="stylesheet" href="../public/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <title>Coffeejob | Home</title>
+    <title>CoffeeJob | Home</title>
 </head>
 <body>
+    <!-- ********************* loading page ********************* -->
+    <div class="preloader">
+        <div class="dot dot1"></div>
+        <div class="dot dot2"></div>
+        <div class="dot dot3"></div>
+    </div>
 
     <!-- Header Section -->
-    <header>
+    <header class="header" id="header">
+        <nav class="navbar">
+            <h2 class="logo">CoffeeJob</h2>
+            <div class="navbar-menu">
+                <a href="#">Home</a>
+                <a href="#">Companies</a>
+                <a href="#">Testimonial</a>
+                <a href="#">Sign In</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="ri-menu-3-line"></i>
+            </div>
+        </nav>
+
+        <section class="home-page">
+            <h1 class="header-title">Find Your <br> <span>Suits Job</span> <br> Easily</h1>
+        </section>
 
     </header>
 
@@ -22,9 +44,18 @@
 
     <!-- Results Section -->
     <section class="results-section" id="results-section">
-        <div >
-            <input type="text" name="search" id="search">
-            <button id="search-btn">search</button>
+        <div class="search-wrapper">
+            <div class="search-box">
+                <div class="search-card">
+                    <input type="text" name="search" id="search">
+                    <input class="search-input" id="search" type="text" name="job-title" placeholder="Job Title">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="suggestions-section">
+
         </div>
         <div id="suggestions-section">
 
@@ -35,9 +66,59 @@
 
 
     <!-- Footer Section -->
-    <footer>
-        
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>CoffeeJob</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni inventore sapiente pariatur suscipit neque repudiandae commodi, soluta quasi cumque corporis voluptate quidem consequatur maiores illum, quia quod eos tempora porro.
+            </p>
+            <div class="social-media">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h4>Explore</h4>
+            <a href="#">Top Jobs</a>
+            <a href="#">Terms and Serves</a>
+            <a href="#">Podcast</a>
+            <a href="#">Careers</a>
+        </div>
+
+        <div class="footer-content">
+            <h4>About</h4>
+            <a href="#">F&Q</a>
+            <a href="#">Get Inspired</a>
+            <a href="#">Blog</a>
+        </div>
+
+        <div class="footer-content">
+            <h4>Support</h4>
+            <a href="#">Customer</a>
+            <a href="#">Trust & Safety</a>
+            <a href="#">Partnership</a>
+        </div>
+
+        <div class="footer-content">
+            <h4>Community</h4>
+            <a href="#">Community</a>
+            <a href="#">Invest & Friend</a>
+            <a href="#">Event</a>
+        </div>
     </footer>
+
+    <!-- ********************* copyright ********************* -->
+    <p class="copy-right">
+        &#169;2020 all right reserved | coding with &#x2764; by Mai & Abdallah.
+    </p>
+
+    <!-- ********************* scroll up ********************* -->
+    <a href="#" class="scroll-up" id="scroll-up">
+        <i class="ri-arrow-up-line scroll-up-icon"></i>
+    </a>
 
     <!-- ********************* JS Links ********************* -->
     <script src="../public/main.js"></script>
