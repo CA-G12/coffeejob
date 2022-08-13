@@ -53,11 +53,11 @@ h1 {
     background: var(--white-color);
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 1000000;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .5;
+    transition: all .5s;
 }
 .dot {
     width: 16px;
