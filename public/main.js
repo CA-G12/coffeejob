@@ -35,3 +35,13 @@ const closeMenu = () => {
     menu.classList.remove('show-menu')
 }
 close.addEventListener('click', closeMenu)
+
+// ! ********************* remove the show-menu when click on each nav-link *********************
+const navLink = document.querySelectorAll('.nav-link')
+
+const linkAction = () => {
+    const menu = document.querySelector('.navbar-menu')
+    // When we click on each nav-link, we remove the show-menu class
+    menu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));

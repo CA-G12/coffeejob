@@ -305,11 +305,6 @@ h1 {
     bottom: 5rem;
 }
 
-/* ? ********************* start media ********************* */
-@media (max-width: 768px) {
-    
-}
-
 /* ? ********************* API SECTION ********************* */
 
 .results {
@@ -432,9 +427,7 @@ h1 {
 .job-apply {
     margin-right: 15px;
 }
-
-/* Job View Section */
-
+/* ? ********************* start Job View Section ********************* */
 .job-view {
     width: 57%;
     height: 100vh;
@@ -557,7 +550,7 @@ h1 {
     }
 }
 
-/* ? media query */
+/* ? ********************* media query ********************* */
 @media (max-width: 768px) { 
     .menu-toggle, .close-icon{
         display: block;
@@ -595,10 +588,7 @@ h1 {
         font-size: 28px;
     }
 
-    /* ! start result find job */
-    .results {
-        height: 100vh;
-    }
+    /* ? ********************* start result find job ********************* */
     .jobs-container {
         flex-direction: column;
     }
@@ -639,5 +629,10 @@ h1 {
     .companyimg-container {
         width: 50px;
         height: 50px;
+    }
+
+    /* ********************* Copyright ********************* */
+    .copy-right {
+        font-size: 12px;
     }
 }
