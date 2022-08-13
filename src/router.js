@@ -56,10 +56,8 @@ const router = (request, response) => {
                 request.on('end', () => {
                     const searchParams = new URLSearchParams(allData); 
                     const searchInput = searchParams.get("inputValue");
-                    console.log(searchParams);
 
                     const arrayOfSuggestions = allJobsData.filter(item => {
-                        // This way we add regex with variables. 
                         const regex = new RegExp(`${searchInput}`, "gi");
                         return item.match(regex)
                     }).sort().reverse();

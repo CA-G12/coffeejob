@@ -12,30 +12,31 @@ const resultsContainer = document.querySelector('.results');
 const loader2 = document.querySelector('.preloader2');
 const notFound = document.querySelector('.error-not-found');
 
-// function expressions need to be defined before called in the fetch call below. 
+/* Auto Complete */ 
+
 const renderData = (data) => {
-    // first line is instead of innerHTML = '' to empty the div; 
     suggestionsDiv.textContent = "";
     const ul = document.createElement('ul');
-    suggestionsDiv.appendChild(ul)
     data.forEach(element => {
         const li = document.createElement('li');
         li.textContent = `${element}`
         ul.appendChild(li)
         li.addEventListener('click', () => {
-            console.log('mai')
+            searchInput.value = li.textContent;
+            suggestionsDiv.style.display = 'none';
         })
     })
+    suggestionsDiv.appendChild(ul);
 }
+
 searchInput.addEventListener('input', () => {
     suggestionsDiv.style.display = 'block'
     fetchPost('/suggestions', renderData);
 })
 
-searchButton.addEventListener('click', () => { 
-    suggestionsDiv.style.display = 'none'
 
-})
+
+
 /* API SECTION */
 
 const renderJobs = (data) => {
@@ -190,9 +191,19 @@ const renderJobDetails = (data, index) => {
 
 }
 
-searchButton.addEventListener('click', () => {
+const getDataFromApi = () => {
     fetchGet(`https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=821b552f&app_key=2006c5cfad389d3b8ef9180f62b66a69&title_only=${searchInput.value}`, renderJobs)
     jobsList.textContent = '';
     loader2.style.display = "flex";
+    suggestionsDiv.style.display = 'none'
+}
+
+searchButton.addEventListener('click', () => {
+    getDataFromApi();
 });
     
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        getDataFromApi();
+    }
+})
