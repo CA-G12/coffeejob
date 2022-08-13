@@ -23,13 +23,14 @@
         <nav class="navbar">
             <h2 class="logo">CoffeeJob</h2>
             <div class="navbar-menu">
-                <a href="#">Home</a>
-                <a href="#">Companies</a>
-                <a href="#">Testimonial</a>
-                <a href="#">Sign In</a>
+                <i class="ri-close-fill close-icon" id="close"></i>
+                <a href="#header" class="nav-link">Home</a>
+                <a href="#results-section" class="nav-link">Jobs</a>
+                <a href="#" class="nav-link">Testimonial</a>
+                <a href="#footer" class="nav-link">Sign In</a>
             </div>
-            <div class="menu-toggle">
-                <i class="ri-menu-3-line"></i>
+            <div class="menu-toggle" id="show">
+                <i class="ri-menu-3-line menu-icon"></i>
             </div>
         </nav>
 
@@ -41,73 +42,71 @@
 
     <!-- Main Section -->
     <main>
-
-    <!-- Results Section -->
-    <section class="results-section" id="results-section">
-        <div class="search-wrapper">
-            <div class="search-box">
-                <div class="search-card">
-                    <input class="search-input" id="search" type="text" name="job-title" placeholder="Job Title or Keyword">
-                    <button class="search-btn" >Search</button>
+        <!-- Results Section -->
+        <section class="results-section" id="results-section">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <div class="search-card">
+                        <input class="search-input" id="search" type="text" name="job-title" placeholder="Job Title or Keyword">
+                        <button class="search-btn" >Search</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="suggestions-section">
+            <div id="suggestions-section">
 
-        </div>
-        <div id="suggestions-section">
-
-        </div>
-    </section>
-
-    <section class="results">
-        <div class="preloader2" >
-            <div class="dot dot1"></div>
-            <div class="dot dot2"></div>
-            <div class="dot dot3"></div>
-        </div>    
-        <div class="jobs-container">
-            <div class="jobs-list">
             </div>
-            <div class="job-view">
-                <div class="job-view-elements">
-                    <div class="view-details-container">
-                        <div class="view-companyimg-container">
-                            <img src="https://media.newjobs.com/clu/xnbs/xnbsx/branding/15946/Randstad-Technology-Group-logo-637599464206620401.png" alt="" class="view-company-img">
+            <div id="suggestions-section">
+
+            </div>
+        </section>
+
+        <section class="results">
+            <div class="preloader2" >
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+            </div>    
+            <div class="jobs-container">
+                <div class="jobs-list">
+                </div>
+                <div class="job-view">
+                    <div class="job-view-elements">
+                        <div class="view-details-container">
+                            <div class="view-companyimg-container">
+                                <img src="https://media.newjobs.com/clu/xnbs/xnbsx/branding/15946/Randstad-Technology-Group-logo-637599464206620401.png" alt="" class="view-company-img">
+                            </div>
+                            <div class="view-details">
+                                <p class="view-job-title">Software Developer</p>
+                                <p class="view-company-name">Google</p>
+                                <p class="view-company-location">AUSTIN, TX 7811</p>
+                            </div>
+                            <a href="#" class="btn view-apply" target="_blank">Apply <svg role="img" width="16" height="16" viewBox="0 0 24 16" fill="#FFFFFF"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path></svg></a>
                         </div>
-                        <div class="view-details">
-                            <p class="view-job-title">Software Developer</p>
-                            <p class="view-company-name">Google</p>
-                            <p class="view-company-location">AUSTIN, TX 7811</p>
+                        <hr class="line"> 
+                        <div class="view-additional-details">
+                            <h1 class="details-title">Details:</h1>
+                            <hr class="detail-line"> 
+                            <div class="job-type">Salary: &nbsp; <span id = "salary">21227 &pound;</span></div>
+                            <hr class="detail-line"> 
+                            <div class="job-type">Location:  &nbsp;  <span id = "full-location">UK England Rockstar City</span></div>
+                            <hr class="detail-line"> 
+                            <div class="job-type">Contract Type:   &nbsp; <span id = "contract-type"></span> <span id = "job-time"></span></div>
+                            <hr class="detail-line"> 
+                            <h1 class="details-title">Description:</h1>
+                            <div class="view-job-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum velit libero voluptas, mollitia corporis perferendis, perspiciatis iure quo suscipit est sit natus? Consequuntur exercitationem est ad unde, praesentium laudantium suscipit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ducimus vitae repudiandae praesentium reiciendis commodi eligendi, minima provident ex vero quasi numquam tenetur. Voluptas optio labore quo voluptatum asperiores quos?</div>
+            
                         </div>
-                        <a href="#" class="btn view-apply" target="_blank">Apply <svg role="img" width="16" height="16" viewBox="0 0 24 16" fill="#FFFFFF"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"></path></svg></a>
-                    </div>
-                    <hr class="line"> 
-                    <div class="view-additional-details">
-                        <h1 class="details-title">Details:</h1>
-                        <hr class="detail-line"> 
-                        <div class="job-type">Salary: &nbsp; <span id = "salary">21227 &pound;</span></div>
-                        <hr class="detail-line"> 
-                        <div class="job-type">Location:  &nbsp;  <span id = "full-location">UK England Rockstar City</span></div>
-                        <hr class="detail-line"> 
-                        <div class="job-type">Contract Type:   &nbsp; <span id = "contract-type"></span> <span id = "job-time"></span></div>
-                        <hr class="detail-line"> 
-                        <h1 class="details-title">Description:</h1>
-                        <div class="view-job-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum velit libero voluptas, mollitia corporis perferendis, perspiciatis iure quo suscipit est sit natus? Consequuntur exercitationem est ad unde, praesentium laudantium suscipit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ducimus vitae repudiandae praesentium reiciendis commodi eligendi, minima provident ex vero quasi numquam tenetur. Voluptas optio labore quo voluptatum asperiores quos?</div>
         
                     </div>
-    
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     </main>
 
-
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-content">
             <h3>CoffeeJob</h3>
             <p>

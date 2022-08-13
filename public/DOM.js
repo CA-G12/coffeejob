@@ -142,7 +142,7 @@ const renderJobs = (data) => {
 
     })
     jobsContainer.style.display = "flex";
-    resultsContainer.style.height = '100vh';
+    // resultsContainer.style.height = '100vh';
     loader2.style.display = "none";
 
 }
