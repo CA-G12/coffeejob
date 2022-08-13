@@ -10,6 +10,7 @@ const jobsViewElements = document.querySelector(".job-view-elements");
 const jobsContainer = document.querySelector(".jobs-container");
 const resultsContainer = document.querySelector('.results');
 const loader2 = document.querySelector('.preloader2');
+const notFound = document.querySelector('.error-not-found');
 
 // function expressions need to be defined before called in the fetch call below. 
 // const renderData = (data) => {
@@ -142,8 +143,15 @@ const renderJobs = (data) => {
 
     })
     jobsContainer.style.display = "flex";
+    resultsContainer.style.display = 'block';
     resultsContainer.style.height = '100vh';
+    notFound.style.display = 'none';
     loader2.style.display = "none";
+
+    if (Object.keys(data.results).length === 0 ) {
+        resultsContainer.style.display = 'none';
+        notFound.style.display = 'flex';
+    }
 
 }
 

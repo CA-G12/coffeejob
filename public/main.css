@@ -533,6 +533,14 @@ h1 {
     animation: slow-appearing-animation .6s ease-in-out;
 }
 
+.error-not-found {
+    display: none;
+    text-align: center;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Animations */
 
 @keyframes appearing-animation {
