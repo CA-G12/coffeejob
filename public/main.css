@@ -440,7 +440,7 @@ h1 {
     height: 100vh;
     background-color: #fff;
     padding: 20px;
-
+    overflow-y: scroll;
 }
 
 .view-details-container {
@@ -578,7 +578,7 @@ h1 {
         transition: all .3s;
     }
     .show-menu{
-        right: 0 !important;
+        right: 0;
     }
 
     .navbar-menu a {
@@ -591,4 +591,53 @@ h1 {
         background: #444;
     }
 
+    .header .header-title {
+        font-size: 28px;
+    }
+
+    /* ! start result find job */
+    .results {
+        height: 100vh;
+    }
+    .jobs-container {
+        flex-direction: column;
+    }
+
+    .job {
+        height: 100%;
+    }
+    .jobs-list {
+        width: 100%;
+        height: 100%;
+        order: 2;
+    }
+    .job-view {
+        width: 100%;
+        overflow-y: scroll;
+    }
+    .view-details-container {
+        flex-direction: column;
+    }
+    .view-companyimg-container {
+        width: 80px;
+        height: 80px;
+    }
+    .view-job-title, 
+    .view-company-name {
+        font-size: 20px;
+    }
+    .view-company-location {
+        font-size: 17px;
+    }
+    .job-type,
+    .view-job-description {
+        font-size: 15px;
+    }
+    .details-container {
+        align-items: center;
+    }
+    .companyimg-container {
+        width: 50px;
+        height: 50px;
+    }
 }
