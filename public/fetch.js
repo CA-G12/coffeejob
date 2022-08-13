@@ -1,4 +1,3 @@
-
 const fetchPost = (url, cb)=>{
     const xhr = new XMLHttpRequest();
     let searchParam = searchInput.value; 

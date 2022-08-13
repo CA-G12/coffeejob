@@ -13,25 +13,29 @@ const loader2 = document.querySelector('.preloader2');
 const notFound = document.querySelector('.error-not-found');
 
 // function expressions need to be defined before called in the fetch call below. 
-// const renderData = (data) => {
-//     // first line is instead of innerHTML = '' to empty the div; 
-//     suggestionsDiv.textContent = "";
-
-//     data.forEach(element => {
-//         const div = document.createElement('div');
-//         const p = document.createElement('p'); 
-        
-//         p.textContent = `${element}`;
-        
-//         div.appendChild(p);
-//         suggestionsDiv.appendChild(div);
-//     })
-// }
-
+const renderData = (data) => {
+    // first line is instead of innerHTML = '' to empty the div; 
+    suggestionsDiv.textContent = "";
+    const ul = document.createElement('ul');
+    suggestionsDiv.appendChild(ul)
+    data.forEach(element => {
+        const li = document.createElement('li');
+        li.textContent = `${element}`
+        ul.appendChild(li)
+        li.addEventListener('click', () => {
+            console.log('mai')
+        })
+    })
+}
 searchInput.addEventListener('input', () => {
+    suggestionsDiv.style.display = 'block'
     fetchPost('/suggestions', renderData);
 })
 
+searchButton.addEventListener('click', () => { 
+    suggestionsDiv.style.display = 'none'
+
+})
 /* API SECTION */
 
 const renderJobs = (data) => {
