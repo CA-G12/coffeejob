@@ -144,7 +144,6 @@ const renderJobs = (data) => {
     })
     jobsContainer.style.display = "flex";
     resultsContainer.style.display = 'block';
-    resultsContainer.style.height = '100vh';
     notFound.style.display = 'none';
     loader2.style.display = "none";
 
